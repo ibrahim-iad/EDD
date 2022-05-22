@@ -4,15 +4,17 @@
 
 @using (Html.BeginForm("Simuler", "EDD", FormMethod.Post, new { id = "New" }))
 {
-    <div class="form-group">
-        @Html.LabelFor(m => m.DernierIndex)
-        @Html.TextBoxFor(m => m.DernierIndex, new { @class = "form-control" })
-    </div>
+<div class="form-group">
+    @Html.LabelFor(m => m.DernierIndex)
+    @Html.TextBoxFor(m => m.DernierIndex, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.DernierIndex, "", new { @class = "text-danger" })
+</div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.IndexActif)
-        @Html.TextBoxFor(m => m.IndexActif, new { @class = "form-control" })
-    </div>
+<div class="form-group">
+    @Html.LabelFor(m => m.IndexActif)
+    @Html.TextBoxFor(m => m.IndexActif, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.IndexActif, "", new { @class = "text-danger" })
+</div>
 
     <div class="form-group">
         <input type="submit" value="Simuler" class="btn btn-primary" />

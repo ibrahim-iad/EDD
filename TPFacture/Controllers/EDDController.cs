@@ -17,13 +17,20 @@ namespace TPFacture.Controllers
             return View(indexVM);
         }
 
+        [HttpPost]
         public ActionResult Simuler(IndexViewModel indexVM)
         {
-            FactureModel factureModel = new FactureModel();
-            factureModel.DernierIndex = indexVM.DernierIndex;
-            factureModel.IndexActif = indexVM.IndexActif;
+            if (ModelState.IsValid)
+            {
+                FactureModel factureModel = new FactureModel();
+                factureModel.DernierIndex = indexVM.DernierIndex;
+                factureModel.IndexActif = indexVM.IndexActif;
 
-            return View(factureModel);
+                return View(factureModel);
+            } else
+            {
+                return View("Index", indexVM);
+            }
         }
     }
 }

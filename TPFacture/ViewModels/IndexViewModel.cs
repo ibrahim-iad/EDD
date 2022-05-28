@@ -10,6 +10,7 @@ namespace TPFacture.ViewModels
     {
         [Display(Name="Ancien index")]
         [Required]
+        [Range(100,5000)]
         public int DernierIndex { get; set; }
 
         [Display(Name = "Index courant")]
